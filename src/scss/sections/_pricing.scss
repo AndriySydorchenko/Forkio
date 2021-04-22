@@ -1,0 +1,89 @@
+.fork-pricing{
+    background-color: #4b3b4e;
+    text-align: center;
+    padding: 40px 0px 90px 0px;
+}
+.pricing-title{
+    font-size: 28px;
+    color: #fff;
+    @include fontMons(bold);
+}
+.pricing{
+    margin: 0 auto;
+    width: 260px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    &--title{
+        background-color: #685b6a;
+        padding: 30px 0;
+        color: #fff;
+        font-size: 24px;
+        @include fontMons;
+        text-transform: uppercase;
+    }
+        &--title-active{
+            background-color: #3a2d3d;
+            padding-top: 50px;
+            padding-bottom: 40px;
+            color: #c1bfc2;
+        }
+    &--item{
+        background-color: #5f5161;
+        padding: 30px 0px 40px 0px;
+    }
+    &--item-active{
+        padding: 15px 0px 45px 0px;
+        background-color: #413344;
+    }
+    &--price{
+        font-size: 60px;
+        color: #fff;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 24px;
+    }
+    &--price-active{
+        margin-bottom: 10px;
+    }
+    &--month{
+        font-size: 14px;
+        @include fontMons;
+        color: #8c828e;
+        text-transform: uppercase;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        &::after{
+            content: "";
+            width: 60px;
+            height: 5px;
+            background-color: #8d81ac;
+            display: block;
+            margin: 0 auto;
+            margin-top: 39px;
+        }
+        }
+        &--descript{
+            font-size: 16px;
+            @include fontMons;
+            padding: 0 25px;
+            display: block;
+            margin-bottom: 40px;
+            color: #fff;
+            line-height: 1.5;
+            height: 50px;
+        }
+    &--descript-active{
+        margin-bottom: 85px;
+    }
+}
+.pricing.active{
+    width: 290px;
+    margin-top: 20px;
+}
+@include phone {
+    .pricing-wrapper{
+        @include flexbox-wrap(wrap);
+    }
+}
+

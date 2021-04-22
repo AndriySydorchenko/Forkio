@@ -1,0 +1,62 @@
+.revolutionaly{
+  padding-top: 120px;
+    padding-bottom: 90px;
+}
+.revolutionary-top{
+    text-align: center;
+    padding: 0 10px;
+}
+.revolutionary-period{
+    margin-top: 35px;
+    margin-bottom: 70px;
+    color: $small-text-color;
+    font-size: 12px;
+    @include fontlato();
+}
+.revolutionary-title{
+    font-size: 26px;
+    text-transform: uppercase;
+     @include fontMons(bold);
+    line-height: 2;
+    color: #635c73;
+}
+.revolutionary-description{
+    font-size: 14px;
+    @include fontlato();
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+.revolutionary-watch{
+    width: 300px;
+    @include flexbox-wrap(wrap);
+    justify-content: center;
+    margin: 0 auto;
+}
+.revolutionary-btn{
+   display: block;
+    color: #333;
+    margin-bottom: 25px;
+    width: 124px;
+    font-size: 10px;
+    font-weight: 700;
+}
+.revolutionary-btn-first{
+    position: relative;
+    height: 100%;
+     border: 1px solid #dddddd;
+    border-radius: 3px 0px 0px 3px;
+     overflow: hidden;
+    padding: 5px 10px;
+background: #fcfcfc; /* Old browsers */
+background: -moz-linear-gradient(top,  #fcfcfc 0%, #eeeeef 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fcfcfc 0%,#eeeeef 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fcfcfc 0%,#eeeeef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#eeeeef',GradientType=0 ); /* IE6-9 */
+
+}
+.revolutionary-second-part{
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: -2px;
+}

@@ -1,0 +1,27 @@
+
+@mixin fontlato($style: regular) {
+    @if $style == regular {
+        font-family: 'Lato';
+    }
+
+    @if $style == bold {
+        font-family: 'Lato';
+        font-weight: 700;
+    }
+    @if $style == bold-italic{
+        font-family: 'Lato';
+        font-weight: 700;
+        font-style: italic;
+    }
+}
+@mixin fontMons($style: regular) {
+    @if $style == regular {
+        font-family: 'Montserrat';
+        font-weight: 400;
+    }
+
+    @if $style == bold {
+        font-family: 'Montserrat';
+        font-weight: 700;
+    }
+}

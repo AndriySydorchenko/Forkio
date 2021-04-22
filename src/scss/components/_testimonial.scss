@@ -1,0 +1,42 @@
+.testimonial{
+  @include flexbox-wrap(wrap);
+  @include flex-box-position(center);
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  &__logo{
+    height: 54px;
+    width: 225px;
+    @include flexbox-wrap(wrap);
+    @include flex-box-position(flex-start);
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+  }
+  &__text{
+    @include fontlato(bold-italic);
+    font-size: 16px;
+    line-height: 24px;
+    color: $text-color;
+    text-align: center;
+  }
+}
+@include phone{
+  .testimonial{
+    width: 44%;
+    &:nth-child(even){
+      margin-right: 50px;
+    }
+  }
+}
+@include laptop{
+  .testimonial {
+    width: 29%;
+    margin-right: 50px;
+    &:nth-child(3n+1) {
+      margin-right: 0;
+    }
+  }
+}

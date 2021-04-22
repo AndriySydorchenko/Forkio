@@ -1,0 +1,183 @@
+.navbar-wrapper{
+  background-color: #27262a;
+}
+.navbar {
+  @include flexbox-wrap(wrap);
+  @include justify-content(space-between);
+  align-items: center;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.navbar-logo{
+  @include flexbox-wrap(wrap);
+  @include flex-box-position(center);
+  &:active, &:focus, &:hover {
+    .navbar-logo-img{
+      background-image: url("../img/navbar-logo--hover.png");
+    }
+  }
+  &-img {
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/navbar-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &-title{
+    display: none;
+  }
+}
+
+.navbar-toggler{
+  padding: 0;
+  width: 26px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  @include flexbox-wrap(wrap);
+  @include justify-content(space-between);
+  @include flex-direction(column);
+  align-items: flex-end;
+
+  &-line{
+    width: 26px;
+    height: 2px;
+    background-color: $text-color;
+  }
+
+  &-line:first-child{
+    width: 20px;
+  }
+}
+
+.navbar-nav{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 20px);
+  transform: translateY(100%);
+  background-color: #333333;
+  z-index: 2;
+  height: 420px;
+  @include flex-box-position(center);
+  &-item{
+
+  }
+  &-link{
+    display: block;
+    width: 100%;
+    color: $text-color;
+    font-size: 2em;
+    padding: 35px;
+    position: relative;
+    border-bottom: 1px solid #3b3b3b;
+    @include fontMons(regular);
+    @include links($text-color, $prime-color , $prime-color , $prime-color);
+    &:active::before, &:focus::before{
+      content: "";
+      display: block;
+      height: calc(100% - 30px);
+      width: 8px;
+      background-color: $prime-color;
+      position: absolute;
+      left: 0;
+      top: 15px;
+    }
+  }
+  &.toggler{
+    display: block;
+  }
+}
+
+@include phone{
+  .navbar{
+    &-logo{
+      &-img{
+        margin-right: 18px;
+      }
+      &-title{
+        display: block;
+        color: $prime-color;
+        text-transform: uppercase;
+        @include fontlato(bold);
+        font-size: 2em;
+      }
+      &:active, &:focus, &:hover {
+        .navbar-logo-title{
+          color: $text-color;
+        }
+      }
+    }
+
+    &-toggler{
+      display: none;
+    }
+
+    &-nav{
+      display: flex;
+      position: static;
+      height: auto;
+      background-color: transparent;
+      order: 1;
+      transform: none;
+      margin-top: 20px;
+      &-item{
+          margin-right: 15px;
+      }
+      &-link{
+        font-size: 16px;
+        color: $prime-color;
+        padding: 0;
+        border: none;
+        @include fontMons(bold);
+        @include links($prime-color, $text-color , $text-color , $text-color);
+        &:active::before, &:focus::before{
+          content: "";
+          display: none;
+        }
+      }
+      &-item:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+@include width-phone{
+  .navbar{
+    &-nav{
+      &-item{
+        margin-right: 45px;
+      }
+      &-item:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+@include laptop{
+  .navbar {
+    @include flexbox-wrap(nowrap);
+    @include justify-content(space-between);
+    align-items: center;
+
+    &-logo {
+      justify-content: flex-start;
+    }
+
+    &-nav {
+      transform: none;
+      width: auto;
+      order: 0;
+      margin: 0 0 0 auto;
+      &-item{
+        margin-right: 50px;
+      }
+      &-item:last-child{
+        margin-right: 50px;
+      }
+    }
+  }
+}

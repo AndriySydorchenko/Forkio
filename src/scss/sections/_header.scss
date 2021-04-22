@@ -1,0 +1,76 @@
+.header-wrapper{
+    min-height: 614px;
+    height: 1px;
+    width: 100%;
+    background-image: url("../img/header-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    position: relative;
+    padding: 42px 20px;
+    text-align: center;
+    height: 100%;
+    &-title{
+        font-size: 48px;
+        text-transform: capitalize;
+        @include fontMons(bold);
+        color: $text-color;
+        margin-bottom: 20px;
+    }
+    &-text{
+        font-size: 18px;
+        @include fontMons(regular);
+        color: $prime-color;
+        text-transform: capitalize;
+        line-height: 2;
+        margin-bottom: 24px;
+    }
+    &-info{
+        color: #848e97;
+        font-size: 14px;
+        text-transform: uppercase;
+        @include fontMons(regular);
+
+    }
+}
+
+.about-img-bg{
+    min-width: 320px;
+    min-height: 150px;
+    display: block;
+    background-image: url("../../img/bg1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@include phone{
+    .header{
+        &-title{
+            font-size: 72px;
+        }
+        &-text{
+            font-size: 24px;
+            text-transform: none;
+            @include fontlato(regular);
+        }
+    }
+}
+@include tablet{
+    .header{
+        &-title{
+            font-size: 82px;
+        }
+        &-text{
+            font-size: 30px;
+            text-transform: none;
+            @include fontlato(regular);
+        }
+        &-info{
+            font-size: 16px;
+        }
+
+    }
+}

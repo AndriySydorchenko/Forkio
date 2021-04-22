@@ -1,0 +1,255 @@
+@mixin box-shadow($params){
+    box-shadow:$params;
+    -webkit-box-shadow:$params;
+    -moz-box-shadow: $params;
+}
+@mixin color($color: red){
+    color: $color;
+}
+%clearfix {
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+@mixin inlineblock($valign: top){
+    display: inline-block;
+    vertical-align: $valign ;
+}
+@mixin placecolor($color: #000000) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin linear-gradient($from, $to) {
+  background: $to;
+    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+    background: -o-linear-gradient(top, $from 0%,$to 100%);
+    background: linear-gradient(to bottom, $from 0%,$to 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to})
+}
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        @content;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+/*----------------media top  ------------------*/
+
+@function rem($px){
+    @return $px / 16px + 0rem;
+}
+@mixin desktop {
+    @media screen and (min-width:1200px){
+        @content;
+    }
+}
+@mixin laptop{
+    @media screen and (min-width:992px){
+        @content;
+    }
+}
+@mixin tablet{
+    @media screen and (min-width:769px){
+        @content;
+    }
+}
+@mixin width-phone{
+  @media screen and  (min-width:600px){
+    @content;
+  }
+}
+@mixin phone{
+    @media screen and  (min-width:480px){
+        @content;
+    }
+}
+@mixin retina{
+    @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 144dpi) {
+        @content;
+    }
+}
+/*---------------- media bottom  ------------------*/
+/*---------------- links top  ------------------*/
+@mixin links ($link, $visited, $hover, $active) {
+    & {
+        color: $link;
+        &:hover {
+            color: $hover;
+        }
+        &:active, &:focus {
+            color: $active;
+        }
+//        &:visited {
+//            color: $visited;
+//        }
+    }
+}
+
+/*---------------- links bottom------------------*/
+
+/*---------------- flexbox top  ------------------*/
+@mixin flexbox-wrap($wrap) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+@mixin flex-box-position($center) {
+  -webkit-justify-content: $center;
+     -moz-justify-content: $center;
+      -ms-justify-content: $center;
+          justify-content: $center;
+            -ms-flex-pack: $center;
+        -webkit-align-items: $center;
+             -moz-align-items: $center;
+              -ms-align-items: $center;
+       -ms-flex-align: $center;
+          align-items: $center;
+}
+/*---------------- flex box bottom  ------------------*/
+
+/*---------------- animation top  ------------------*/
+
+@mixin transform($transforms) {
+       -moz-transform: $transforms;
+         -o-transform: $transforms;
+        -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+@mixin transform-rotate($dig){
+    -moz-transform: rotate($dig);
+    -webkit-transform: rotate($dig);
+    -o-transform: rotate($dig);
+    -ms-transform: rotate($dig); /* для IE9 */
+    transform: rotate($dig); /* на будущее */
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+
+    @-o-keyframes $animation_name {
+        @content;
+    }
+
+    @keyframes $animation_name {
+        @content;
+    }
+}
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards;
+
+     -webkit-animation:($delay);
+     -moz-animation:($delay);
+    -o-animation:($delay);
+    animation:($delay);
+}
+
+/*---------------- aniamtion bottom  ------------------*/

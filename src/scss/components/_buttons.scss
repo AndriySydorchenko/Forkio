@@ -1,0 +1,66 @@
+.btn {
+  padding: 12px 24px;
+  font-size: 15px;
+  @include fontMons(regular);
+  @include border-radius(24px);
+  //COLORED BTN IN A PRIME COLOR
+  &--prime-color {
+    @include fontMons(bold);
+    background-color: $prime-color;
+    color: $text-color;
+
+    &:active, &:focus, &:hover {
+      background-color: $text-color;
+      color: $prime-color;
+    }
+
+    //BTN WITH PSEUDO-ELEMENT "DESCRIPTION"
+    &--with-desc {
+      position: absolute;
+      min-width: 290px;
+      width: 1px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+
+      &::after {
+        content: "Unlimited 30-Days Trial Period";
+        display: inline-block;
+        color: #a5acb3;
+        font-size: 14px;
+        @include fontMons(regular);
+        width: 100%;
+        position: absolute;
+        bottom: -33px;
+        left: 0;
+      }
+
+      }
+    }
+}
+.btn{
+       &--fork-color{
+            text-transform: uppercase;
+           background-color: #776b79;
+           color: #fff;
+           &:active, &:focus, &:hover {
+              background-color: #cbc5ca;
+              color:#7f6d78 ;
+    }
+        }
+}
+
+  @include phone{
+    .btn{
+      padding: 12px 34px;
+      font-size: 16px;
+      &--prime-color{
+        &--with-desc {
+          padding: 18px 62px;
+          min-width: 390px;
+          font-size: 21px;
+          @include border-radius(46px);
+        }
+      }
+    }
+}

@@ -1,0 +1,130 @@
+.whatget{
+    background-color: #f4f4f4;
+    text-align: center;
+    padding-top: 25px;
+}
+.whatget-title{
+    margin-bottom: 30px;
+    @include fontMons(bold);
+    color: $prime-color;
+    font-size: 32px;
+}
+.whatget-item{
+    text-align: center;
+}
+.whatget-img-box{
+    display: inline-block;
+     margin-bottom: 30px;
+}
+.whatget-img-bg-1{
+    background-image: url("../img/what-get-1.png");
+    background-size: cover;
+     width: 113px;
+    height: 66px;
+
+}
+.whatget-img-bg-2{
+    background-image: url("../img/what-get-2.png");
+    background-size: cover;
+     width: 95px;
+    height: 85px;
+
+}
+.whatget-img-bg-3{
+    background-image: url("../img/what-get-3.png");
+    background-size: cover;
+     width: 60px;
+    height: 86px;
+
+}
+.whatget-img-bg-4{
+    background-image: url("../img/what-get-4.png");
+    background-size: cover;
+     width: 77px;
+    height: 77px;
+
+}
+.whatget-img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.whatget-item-title{
+    margin-bottom: 15px;
+    @include fontMons;
+    font-size: 16px;
+}
+.whatget-description{
+    font-size: 14px;
+    @include fontlato;
+    color: $small-text-color;
+    line-height: 1.5;
+    margin-bottom: 45px;
+}
+.whatget-imgbox-wrap{
+    position: relative;
+    height: 350px;
+}
+.whatget-imgbox{
+    display: block;
+    height: 350px;
+    width: 600px;
+     background-image: url("../img/editor.png");
+    background-size: cover;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    z-index: 1;
+}
+@include phone {
+    .revolutionary-watch{
+        width: 100%;
+    }
+    .whatget-item{
+        @include flexbox-wrap(no-wrap);
+    }
+    .whatget-bottom{
+       text-align: left;
+    }
+    .whatget-img-wrapper{
+        min-width: 120px;
+        display: block;
+        margin-right: 10px;
+    }
+    .whatget-imgbox-wrap{
+        height: 477px;
+    }
+    .whatget-imgbox{
+        height: 477px;
+        width: 900px;
+    }
+}
+@include desktop{
+    .whatget{
+        padding-top: 90px;
+        padding-bottom: 70px;
+    }
+    .whatget .container{
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+    }
+    .whatget-itembox{
+        width: 50%;
+    }
+    .whatget-title{
+        width: 50%;
+    }
+
+
+    .whatget-imgbox-wrap{
+        float: right;
+        position: absolute;
+        top: 50px;
+        left: 55%
+}
+}

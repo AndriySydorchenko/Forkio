@@ -1,0 +1,80 @@
+
+.about-fork-wrapper{
+  background-image: url("../img/testmonials-bg.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: -1;
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(75,59,78);
+    background: linear-gradient(0deg, rgba(75,59,78,1) 0%, rgba(75,59,78,1) 40%, rgba(75,59,78,0) 60%);
+    z-index: -1;
+  }
+
+
+}
+.about-fork{
+  width: 100%;
+  padding: 50px 30px;
+  @include flexbox-wrap(wrap);
+  @include flex-box-position(flex-start);
+  @include justify-content(center);
+  position: relative;
+  &-title{
+    width: 100%;
+    @include fontMons(bold);
+    font-size: 36px;
+    color: $text-color;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  &-text{
+    display: none;
+  }
+  &:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 80%;
+    background-color: #645766;
+    position: absolute;
+    bottom: 35px;
+  }
+}
+@include phone{
+  .about-fork{
+    padding: 50px 10px;
+    &-text{
+      display: block;
+      font-size: 14px;
+      @include fontlato(regular);
+      color: #a291a5;
+      text-align: center;
+      padding: 0 10px;
+    }
+    &:after {
+      width: 95%;
+      max-width: 780px;
+    }
+  }
+}
+@include laptop{
+  .about-fork {
+    padding: 50px 10px;
+    &-title{
+      font-size: 48px;
+    }
+    &-text {
+      padding: 0 170px;
+    }
+  }
+    }
+
